@@ -1,0 +1,12 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--prefix=/home/pcisse200/tools2021" \
+"--with-apr=/home/pcisse200/tools2021" \
+"--with-apr-util=/home/pcisse200/tools2021" \
+"--with-pcre=/home/pcisse200/tools2021" \
+"--enable-ssl" \
+"--with-ssl=/home/pcisse200/tools2021" \
+"$@"

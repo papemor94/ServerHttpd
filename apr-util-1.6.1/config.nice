@@ -1,0 +1,9 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--prefix=/home/pcisse200/tools2021" \
+"--with-apr=/home/pcisse200/tools2021" \
+"--with-expat=/home/pcisse200/tools2021" \
+"$@"

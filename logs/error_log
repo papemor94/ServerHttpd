@@ -1,0 +1,6 @@
+[Mon Feb 22 23:43:57.025039 2021] [ssl:warn] [pid 11037:tid 140145444521792] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Feb 22 23:43:57.025164 2021] [ssl:warn] [pid 11037:tid 140145444521792] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Feb 22 23:43:57.045888 2021] [ssl:warn] [pid 11038:tid 140145444521792] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Feb 22 23:43:57.046127 2021] [ssl:warn] [pid 11038:tid 140145444521792] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Feb 22 23:43:57.063468 2021] [mpm_event:notice] [pid 11038:tid 140145444521792] AH00489: Apache/2.4.46 (Unix) OpenSSL/1.1.1i configured -- resuming normal operations
+[Mon Feb 22 23:43:57.063538 2021] [core:notice] [pid 11038:tid 140145444521792] AH00094: Command line: '/home/pcisse200/tools2021/bin/httpd'

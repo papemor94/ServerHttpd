@@ -1,0 +1,25 @@
+
+
+/* vérif apr 1.7.0
+48e9dbf45ae3fdc7b491259ffb6ccf7d63049ffacbc1c0977cced095e4c2d5a2 *apr-1.7.0.tar.gz
+*/
+
+
+/* vérif apr-util-1.6.1
+b65e40713da57d004123b6319828be7f1273fbc6490e145874ee1177e112c459  apr-util-1.6.1.tar.gz
+*/
+
+/* vérif httpd-2.4.46
+44b759ce932dc090c0e75c0210b4485ebf6983466fb8ca1b446c8168e1a1aec2 *httpd-2.4.46.tar.gz
+*/
+
+
+/* vérif openssl-1.1.1i sha256
+e8be6a35fe41d10603c3cc635e93289ed00bf34b79671a3a4de64fcee00d5242
+*/
+
+
+/* installer pcre-8-44!!!!! (la pcre2-10-36 ne fonctionne pas, pb pcre-config) */
+
+
+

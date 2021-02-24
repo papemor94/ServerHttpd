@@ -1,0 +1,91 @@
+/* VERIF archive httpd-2.4.33.tar.gz */
+
+jmrobert@dali1404:~$ cd tools2018/
+jmrobert@dali1404:~/tools2018$ md5sum httpd-2.4.33.tar.gz 
+e983c251062872e5caf87372776c04c0  httpd-2.4.33.tar.gz
+
+/* VERIF archive apr-util-1.6.1.tar.gz */
+
+jmrobert@dali1404:~/tools2018$ md5sum apr-util-1.6.1.tar.gz 
+bd502b9a8670a8012c4d90c31a84955f  apr-util-1.6.1.tar.gz
+
+/* VERIF archive apr-1.6.3.tar.gz */
+
+jmrobert@dali1404:~/tools2018$ md5sum apr-1.6.3.tar.gz 
+57c6cc26a31fe420c546ad2234f22db4  apr-1.6.3.tar.gz
+
+/* VERIF archive openssl-1.1.0h.tar.gz */
+jmrobert@dali1404:~/tools2018$ sha1sum openssl-1.1.0h.tar.gz 
+0fc39f6aa91b6e7f4d05018f7c5e991e1d2491fd  openssl-1.1.0h.tar.gz
+
+/* INSTALL apr-1.6.3 */
+jmrobert@dali1404:~/tools2018/apr-1.6.3$ ./configure --prefix=/home/jmrobert/tools2018
+jmrobert@dali1404:~/tools2018/apr-1.6.3$ make
+jmrobert@dali1404:~/tools2018/apr-1.6.3$ make install
+
+
+/* INSTALL apr-utils-1.5.4 */
+
+jmrobert@dali1404:~/tools2018/apr-util.1.6.1$ ./configure --prefix=/home/jmrobert/tools2018 --with-apr=/home/jmrobert/tools2018
+jmrobert@dali1404:~/tools2018/apr-util.1.6.1$ make
+jmrobert@dali1404:~/tools2018/apr-util.1.6.1$ make install
+
+
+/* INSTALL pcre-8.37 */
+jmrobert@dali1404:~/tools2018/pcre-8.42$ ./configure --prefix=/home/jmrobert/tools2018 && make
+jmrobert@dali1404:~/tools2018/pcre-8.42$ make install
+
+/* INSTALL openSSL-1.1.0h */
+jmrobert@dali1404:~/tools2018/openssl-1.1.0h$ ./config --prefix=/home/jmrobert/tools2018 -shared -fPIC
+jmrobert@dali1404:~/tools2018/openssl-1.1.0h$ make clean
+jmrobert@dali1404:~/tools2018/openssl-1.1.0h$ make
+jmrobert@dali1404:~/tools2018/openssl-1.1.0h$ make install
+
+
+
+/*INSTALL Apache2 !!!!! */
+jmrobert@dali1404:~/tools2018/httpd-2.4.33$ ./configure --prefix=/home/jmrobert/tools2018  --with-apr=/home/jmrobert/tools2018 --with-apr-util=/home/jmrobert/tools2018 --with-pcre=/home/jmrobert/tools2018 --enable-ssl --with-ssl=/home/jmrobert/tools2018
+jmrobert@dali1404:~/tools2018/httpd-2.4.33$ make
+jmrobert@dali1404:~/tools2018/httpd-2.4.33$ make install
+
+/* Là, votre serveur est compilé et prêt à l'emploi ! 
+
+il faut modifier les fichiers conf/httpd.conf et conf/extra/httpd-ssl.conf
+
+changer le port pour les deux modes...
+
+conf/httpd.conf, décocher le :
+
+include extra/httpd-ssl.conf
+
+loadModule mod_ssl.so
+
+loadModule mod_socache_shmcb
+
+conf/extra/httpd-ssl.conf
+
+changer le port et indiquer l'emplacement des certificats.
+
+Authentification du client, décocher :
+
+SSLVerifyClient require
+SSLVerifyDepth  2
+
+
+pour lancer le serveur apache : 
+
+cd bin/
+./apachectl start
+
+on peut changer le port dans apachectl (>1024) pour éviter de devoir lancer en su.
+
+urls :
+
+http://apr.apache.org/download.cgi
+
+https://httpd.apache.org/download.cgi#apache24
+
+ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/
+
+ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+
